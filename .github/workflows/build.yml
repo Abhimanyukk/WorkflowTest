@@ -1,0 +1,19 @@
+name: Build the source code
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: GCC compile
+      run: gcc main.c -o bin
+
+    - name: Run Binary
+      run: ./bin
